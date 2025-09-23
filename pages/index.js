@@ -14,7 +14,7 @@ function HomePage() {
   }, [])
 
   return (
-    <div className='min-h-screen w-full bg-white text-white'>
+    <div className='min-h-screen w-full bg-white text-white pb-24'>
       <NavBar />
       <FilterBar />
       <div className='max-w-7xl mx-auto  px-5'>

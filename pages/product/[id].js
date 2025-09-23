@@ -2,8 +2,10 @@ import React, { useEffect , useState } from 'react'
 import  axios from 'axios'
 import { useRouter } from 'next/router'
 import NavBar from '@/components/NavBar'
+import { useCart } from '@/context/cartContext'
 
 function ProductPage() {
+    const {addToCart} = useCart()
     const { id } = useRouter().query
     const [productData, setProductData] = useState({})
     useEffect(() => {
@@ -34,7 +36,7 @@ function ProductPage() {
                         <div className='mt-auto flex items-center justify-between'>
                             <button 
                                 className='bg-white hover:bg-slate-200 transition-colors rounded-lg px-4 py-2 font-semibold text-blue-900 border-2 text-sm'
-                                onClick={() => console.log('Add to Cart')}
+                                onClick={() => addToCart(productData)}
                             >
                                 Add to Cart
                             </button>
