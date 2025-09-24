@@ -8,10 +8,10 @@ function ProductPage() {
     const {addToCart} = useCart()
     const { id } = useRouter().query
     const [productData, setProductData] = useState({})
-    
+
     useEffect(() => {
         if(!id) return
-        axios.get(`http://localhost:3000/api/product/${id}`)
+        axios.get(`/api/product/${id}`)
         .then(res => setProductData(res.data))
         .catch(err => console.log(err))
     }, [id])

@@ -9,7 +9,7 @@ function HomePage() {
   const [filteredProducts, setFilteredProducts] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/product')
+    axios.get('/api/product')
       .then(res => {
         setProducts(res.data)
         setFilteredProducts(res.data) 
